@@ -25,25 +25,23 @@ operations = {
 }
 
 num1 = int(input("What's the first number?: "))
-num2 = int(input("What's the second number?: "))
 
+#display the symbols
 for symbols in operations:
     print(symbols)
 
-operation_symbol = input("Pick an operation from the line above: ")
+should_continue = True #flag
 
-# def operate (num1, num2, operation_symbol):
-#     if operation_symbol == "+":
-#         final_value = add(num1,num2)
-#     elif operation_symbol == "-":
-#         final_value = subtract(num1,num2)
-#     elif operation_symbol == "*":
-#         final_value= multiply(num1,num2)
-#     elif operation_symbol == "/":
-#         final_value = divide(num1,num2)
-#     return final_value 
+while should_continue:
+    operation_symbol = input("Pick an operation: ")
+    num2 = int(input("What's the next number?: "))
+    calc_function = operations[operation_symbol] #use the function stored inside the dictionary with 1 line of code
+    answer = calc_function(num1, num2) #store the answer
 
-calc_function = operations[operation_symbol] #use the function stored inside the dictionary with 1 line of code
-answer = calc_function(num1, num2) #store the answer
+    print(f"{num1} {operation_symbol} {num2} = {answer}")
 
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+    if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to exit: ") == "y":
+        num1 = answer
+    else:
+        should_continue = False
+    
