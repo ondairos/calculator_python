@@ -32,6 +32,17 @@ for symbols in operations:
 
 operation_symbol = input("Pick an operation from the line above: ")
 
+def operate (num1, num2, operation_symbol):
+    if operation_symbol == "+":
+        final_value = add(num1,num2)
+    elif operation_symbol == "-":
+        final_value = subtract(num1,num2)
+    elif operation_symbol == "*":
+        final_value= multiply(num1,num2)
+    elif operation_symbol == "/":
+        final_value = divide(num1,num2)
+    return final_value 
 
 
+answer = operate(num1,num2,operation_symbol)
 print(f"{num1} {operation_symbol} {num2} = {answer}")
