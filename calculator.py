@@ -23,3 +23,15 @@ operations = {
     "*": multiply,
     "/": divide,
 }
+
+num1 = int(input("What's the first number?: "))
+num2 = int(input("What's the second number?: "))
+
+for symbols in operations:
+    print(symbols)
+
+operation_symbol = input("Pick an operation from the line above: ")
+
+
+
+print(f"{num1} {operation_symbol} {num2} = {answer}")
